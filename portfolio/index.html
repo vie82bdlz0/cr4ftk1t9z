@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lukas Vrn - Backend Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="brand">lukas<span>.vrn</span></a>
+            <ul>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#writing">Writing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <span class="dot"></span>
+            <p class="kicker">Backend Engineer / Data infrastructure</p>
+            <h1>I build resilient backends and pipelines that keep data flowing under pressure.</h1>
+            <p class="lead">Currently freelancing from Lyon. Eight years shipping distributed systems, payment rails and observability tooling for fintech and SaaS companies. I focus on correctness, latency, and on-call ergonomics.</p>
+            <div class="cta">
+                <a href="#work" class="primary">See what I shipped</a>
+                <a href="#contact" class="ghost">Start a conversation</a>
+            </div>
+        </section>
+
+        <section id="work" class="section">
+            <div class="section-head">
+                <h2>Selected work</h2>
+                <p>A handful of recent engagements. Names are anonymized when I am still bound by NDA.</p>
+            </div>
+            <div class="cards">
+                <article class="card">
+                    <span class="tag">Fintech / 2025</span>
+                    <h3>Ledger consolidation engine</h3>
+                    <p>Designed a double-entry ledger replaying 14 months of transactions across three legacy systems. Cut reconciliation lag from 8 hours to under 90 seconds and removed a recurring class of off-by-one bugs in fee accruals.</p>
+                    <div class="meta">Go - Kafka - Postgres - OpenTelemetry</div>
+                </article>
+                <article class="card">
+                    <span class="tag">SaaS / 2024</span>
+                    <h3>Multi-tenant rate limiter</h3>
+                    <p>Replaced a fragile token-bucket service with a sharded Redis design backed by lua scripts. Sustained 220k req/s during stress tests with predictable tail latency, while keeping per-tenant policies hot-reloadable.</p>
+                    <div class="meta">Rust - Redis - Terraform - Datadog</div>
+                </article>
+                <article class="card">
+                    <span class="tag">Data / 2024</span>
+                    <h3>Event pipeline rewrite</h3>
+                    <p>Migrated a 6 TB/day event pipeline from cron-driven scripts to a streaming architecture with exactly-once semantics. Schema registry, contract tests in CI, and a backfill tool that operators can run without paging me at 3am.</p>
+                    <div class="meta">Python - Flink - Avro - Airflow</div>
+                </article>
+                <article class="card">
+                    <span class="tag">Platform / 2023</span>
+                    <h3>Internal deploy CLI</h3>
+                    <p>Built a deploy CLI on top of Kubernetes that abstracts away Helm pain for product teams. Includes preview environments per PR, automatic dependency graph and a rollback that has been triggered exactly twice in eighteen months.</p>
+                    <div class="meta">Go - Kubernetes - Helm - GitHub Actions</div>
+                </article>
+            </div>
+        </section>
+
+        <section id="stack" class="section">
+            <div class="section-head">
+                <h2>Tooling</h2>
+                <p>What I reach for when starting a new project. I try to keep this list short on purpose.</p>
+            </div>
+            <div class="grid-stack">
+                <div class="cell">
+                    <h4>Languages</h4>
+                    <p>Go, Rust, Python, TypeScript when a thin BFF is needed.</p>
+                </div>
+                <div class="cell">
+                    <h4>Storage</h4>
+                    <p>Postgres first, then Redis or ClickHouse if metrics demand it.</p>
+                </div>
+                <div class="cell">
+                    <h4>Streaming</h4>
+                    <p>Kafka for high throughput, NATS for lower-volume internal buses.</p>
+                </div>
+                <div class="cell">
+                    <h4>Infra</h4>
+                    <p>Kubernetes, Terraform, Cloudflare, AWS. Comfortable on bare metal too.</p>
+                </div>
+                <div class="cell">
+                    <h4>Observability</h4>
+                    <p>OpenTelemetry, Grafana, Loki, Tempo. Strong opinions on RED metrics.</p>
+                </div>
+                <div class="cell">
+                    <h4>Tests</h4>
+                    <p>Property-based testing, contract tests, golden files. Less unit, more integration.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="writing" class="section">
+            <div class="section-head">
+                <h2>Notes</h2>
+                <p>Occasional write-ups. I try to publish when I have something useful to say, not on a schedule.</p>
+            </div>
+            <ul class="notes">
+                <li>
+                    <span class="date">Mar 2026</span>
+                    <h4>Why we stopped using exactly-once and slept better</h4>
+                    <p>A pragmatic look at idempotency keys, dedup windows, and the human cost of pretending distributed systems are simpler than they are.</p>
+                </li>
+                <li>
+                    <span class="date">Nov 2025</span>
+                    <h4>Postgres at 4 TB without flinching</h4>
+                    <p>Concrete tactics that kept a single-primary cluster fast and predictable, including partition strategy and the autovacuum settings nobody talks about.</p>
+                </li>
+                <li>
+                    <span class="date">Aug 2025</span>
+                    <h4>Reading on-call runbooks like code reviews</h4>
+                    <p>How treating runbooks as first-class artifacts changed the way our team handled incidents and reduced mean time to recovery.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="section-head">
+                <h2>Get in touch</h2>
+                <p>I am selectively taking on new engagements for the second half of 2026. Short, focused projects work best for both of us.</p>
+            </div>
+            <div class="contact-row">
+                <a href="mailto:hello@lukasvrn.dev" class="primary">hello@lukasvrn.dev</a>
+                <a href="https://github.com/vie82bdlz0" class="ghost">GitHub profile</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>2026 Lukas Vrn. Built quietly in a terminal. Source on GitHub.</p>
+    </footer>
+
+</body>
+</html>
